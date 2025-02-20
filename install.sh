@@ -11,7 +11,7 @@ then
 fi
 
 # Install Apache, PHP, and PHP Modules
-echo 'dnf -q install -y httpd php php-mysqlnd'
+echo dnf -q install -y httpd php php-mysqlnd
 
 # Start and enable the web server
 echo systemctl start httpd
