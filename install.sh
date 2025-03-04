@@ -12,10 +12,10 @@ then
 fi
 
 # Fetch the package lists
-apt-get -q=2 update
+apt-get update &> /dev/null
 
 # Install Apache, PHP, and PHP Modules
-apt-get -q=2 install -y apache2 php php-mysqlnd
+apt-get install -y apache2 php php-mysqlnd &> /dev/null
 
 # Remove Apache Debian default page
 rm /var/www/html/index.html
@@ -25,7 +25,7 @@ systemctl start apache2
 systemctl enable apache2
 
 # Install MariaDB
-apt-get -q=2 install -y mariadb-server
+apt-get install -y mariadb-server &> /dev/null
 
 # Start and enable MariaDB
 systemctl start mariadb
@@ -49,7 +49,7 @@ tar zxf wordpress-6.7.2.tar.gz
 mv wordpress/* /var/www/html
 
 # Install the wp-cli tool
-apt-get -q=2 install -y php-json
+apt-get install -y php-json &> /dev/null
 wget -q https://raw.github.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 mv wp-cli.phar /usr/local/bin/wp
 chmod 755 /usr/local/bin/wp
