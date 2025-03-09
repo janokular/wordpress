@@ -1,2 +1,0 @@
-# lamp stack
-lamp stack
