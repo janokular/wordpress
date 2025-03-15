@@ -11,7 +11,7 @@ then
   exit 1
 fi
 
-# Fetch the package lists
+# Reload the package database
 apt-get update &> /dev/null
 
 # Install Apache, PHP, and PHP Modules
